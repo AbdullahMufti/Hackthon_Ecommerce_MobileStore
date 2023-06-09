@@ -4,7 +4,10 @@ import Link from "next/link"
 import { NavItem } from "@/types/nav"
 import { siteConfig } from "@/config/site"
 import { cn } from "@/lib/utils"
+import { DropdownMenuD } from "@/components/ui/DropdownMenuD"
 import { Icons } from "@/components/icons"
+
+import { InputWithButton } from "./ui/SearchBar"
 
 interface MainNavProps {
   items?: NavItem[]
@@ -17,23 +20,10 @@ export function MainNav({ items }: MainNavProps) {
         <Icons.logo className="h-6 w-6" />
         <span className="inline-block font-bold">{siteConfig.name}</span>
       </Link>
+      <DropdownMenuD />
       {items?.length ? (
         <nav className="flex gap-6">
-          {items?.map(
-            (item, index) =>
-              item.href && (
-                <Link
-                  key={index}
-                  href={item.href}
-                  className={cn(
-                    "flex items-center text-sm font-medium text-muted-foreground",
-                    item.disabled && "cursor-not-allowed opacity-80"
-                  )}
-                >
-                  {item.title}
-                </Link>
-              )
-          )}
+          <InputWithButton />
         </nav>
       ) : null}
     </div>

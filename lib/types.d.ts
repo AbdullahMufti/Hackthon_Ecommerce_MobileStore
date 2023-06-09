@@ -1,0 +1,35 @@
+export interface CompleteProduct {
+  _id: string
+  name: string
+  company: string
+  price_pkr: number
+  price_usd: number
+  src: string
+  os: string
+  dimensions: string
+  weight: string
+  sim: string
+  colors: string
+  cpu: string
+  chipset: string
+  gpu: string
+  technology: string
+  size: number
+  resolution: string
+  storage: string
+  memory: string
+  card: string
+  maincamera: string
+  features: string
+  front: string
+  gps: string
+  radio: string
+  usb: string
+  nfc: string
+  data: string
+  sensors: string
+  audio: string
+  torch: string
+  extra: string
+  battery: number
+}
