@@ -18,7 +18,7 @@ export default async function Oppo(): Promise<React.JSX.Element> {
   return (
     <div>
       <Image
-        src="/oppo.png"
+        src="/oppo.svg"
         height={180}
         width={350}
         alt="Mobile"

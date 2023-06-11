@@ -44,16 +44,15 @@ export function DropdownMenuD() {
     { name: "Nokia", url: "/company/Nokia" },
     { name: "Xiaomi", url: "/company/Xiaomi" },
     { name: "Infinix", url: "/company/Infinix" },
+    { name: "All Mobiles", url: "/company/All" },
   ]
 
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button variant="outline">Mobile Companies</Button>
+        <Button variant="outline">Brands</Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent className="w-56">
-        <DropdownMenuLabel>My Account</DropdownMenuLabel>
-        <DropdownMenuSeparator />
         <DropdownMenuGroup>
           {data.map((item, index) => (
             <Link key={index} className="pointer" href={item.url}>

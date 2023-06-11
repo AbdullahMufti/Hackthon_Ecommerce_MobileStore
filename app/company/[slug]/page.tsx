@@ -8,19 +8,26 @@ export default async function Page({ params }: { params: { slug: string } }) {
   const namecomp = params.slug
 
   const fetchPhone = async () => {
-    const res = await client.fetch(
-      `*[_type=="product" && company=='${namecomp}'] | order(price_usd asc)`
-    )
-    return res
+    if (namecomp !== "All") {
+      const res = await client.fetch(
+        `*[_type=="product" && company=='${namecomp}'] | order(price_usd asc)`
+      )
+      return res
+    } else {
+      const res = await client.fetch(
+        `*[_type=="product"] | order(price_usd asc)`
+      )
+      return res
+    }
   }
 
   const data: [CompleteProduct] = await fetchPhone()
   return (
     <div>
       <Image
-        src="/apple.jpg"
-        height={180}
-        width={350}
+        src={`/${namecomp.toLowerCase()}.svg`}
+        height={140}
+        width={140}
         alt="Mobile"
         className=" mx-auto my-4"
       />

@@ -18,11 +18,11 @@ export default async function Samsung(): Promise<React.JSX.Element> {
   return (
     <div>
       <Image
-        src="/samsung.png"
+        src="/samsung.svg"
         height={180}
         width={350}
         alt="Mobile"
-        className=" mx-auto my-4"
+        className=" mx-auto my-3"
       />
       {data && <MultiCaro data={data} />}
     </div>

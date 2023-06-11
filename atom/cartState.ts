@@ -11,7 +11,7 @@ interface CartData {
 
 const prevData: string | null = localStorage.getItem("cart")
 let prevDataArr: [CartData] = JSON.parse(prevData)
-export const cartState = atom({
+export const cartState = atom<[CartData] | []>({
   key: "cartState",
   default: prevDataArr || [],
 })

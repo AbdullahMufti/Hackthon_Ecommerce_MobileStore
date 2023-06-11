@@ -17,13 +17,16 @@ export default async function Iphone() {
   const data: [CompleteProduct] = await fetchPhone()
   return (
     <div>
-      <Image
-        src="/apple.jpg"
-        height={180}
-        width={350}
-        alt="Mobile"
-        className=" mx-auto my-4"
-      />
+      <div className="flex items-center justify-center">
+        <Image
+          src="/apple.svg"
+          height={40}
+          width={40}
+          alt="Mobile"
+          className=" my-4"
+        />
+        <span>Apple Mobiles</span>
+      </div>
 
       {data && <MultiCaro data={data} />}
     </div>
