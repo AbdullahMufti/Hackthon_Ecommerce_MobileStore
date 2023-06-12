@@ -3,9 +3,9 @@
 import React from "react"
 import Image from "next/image"
 import Link from "next/link"
+import { useCartContext } from "@/context/CartContext"
 import toast, { Toaster } from "react-hot-toast"
 
-import { AddToCart } from "@/lib/cartManage"
 import { CompleteProduct } from "@/lib/types"
 
 import { Icons } from "../icons"
@@ -19,6 +19,10 @@ interface Pricecard {
   pkr: number
   item: CompleteProduct
 }
+interface Mapobj {
+  vval: string
+  indx: number
+}
 export default function ProductCard({
   src,
   name,
@@ -27,21 +31,20 @@ export default function ProductCard({
   pkr,
   item,
 }: Pricecard) {
+  const { AddToCart } = useCartContext()
+
   return (
-    <div className="carousel-item relative m-5 flex w-full max-w-xs flex-col overflow-hidden rounded-lg border border-gray-100  shadow-md">
+    <div className="m-2 flex w-full max-w-xs flex-col overflow-hidden rounded-lg border border-gray-100  shadow-md">
       <Toaster />
 
-      <div className="relative mx-3 mt-3 flex h-60 justify-center overflow-hidden rounded-xl">
+      <div className="relative mx-3 mt-3 flex h-auto justify-center overflow-hidden rounded-xl">
         <Image
-          className="object-contain"
+          className="h-20 w-auto"
           src={`/mobiles/${src.split("/").reverse()[0]}`}
-          height={200}
-          width={200}
+          height={350}
+          width={170}
           alt="product image"
         />
-        <span className="absolute left-0 top-0  m-2 rounded-full bg-green-400 px-2 text-center text-sm font-medium ">
-          00% OFF
-        </span>
       </div>
       <div className="mt-4 px-5 pb-5">
         <div>
@@ -54,28 +57,30 @@ export default function ProductCard({
           <h5 className="text-center text-lg tracking-tight ">
             Memory : {item.memory}
           </h5>
-
-          <div className="mb-5 mt-2  flex items-center justify-between">
+          <div className="flex items-center justify-center">
+            <Icons.star />
+            <Icons.star />
+            <Icons.star />
+            <Icons.star />
+            <Icons.star />
+            <span className="rounded p-1 text-xs font-semibold">5.0</span>
+          </div>
+          <div className="mb-5 mt-2  flex items-center justify-evenly">
             <p>
               <span className="text-xl font-bold ">$ {usd}</span>
             </p>
-            <div className="flex items-center">
-              <Icons.star />
-              <Icons.star />
-              <Icons.star />
-              <Icons.star />
-              <Icons.star />
-              <span className="ml-3 mr-2  rounded  px-2.5 py-0.5 text-xs font-semibold">
-                5.0
-              </span>
-            </div>
+            <p>
+              <span className="text-lg font-bold ">Rs. {pkr}</span>
+            </p>
           </div>
         </div>
         <div className="flex  items-center justify-evenly ">
           <Button
             onClick={() => {
               AddToCart(item)
-              toast(` ${item.company} ${item.name} added to cart`)
+              toast(` ${item.company} ${item.name} added to cart`, {
+                position: "bottom-right",
+              })
             }}
             variant="outline"
             className="bg-green-500"

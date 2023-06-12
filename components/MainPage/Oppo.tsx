@@ -8,13 +8,14 @@ import MultiCaro from "./MultiCaro"
 
 const fetchPhone = async () => {
   const res = await client.fetch(
-    `*[_type=="product" && company=="Oppo"][0..10]`
+    `*[_type=="product" && company=="Oppo"][0..4]`
   )
   return res
 }
 
 export default async function Oppo(): Promise<React.JSX.Element> {
   const data: [CompleteProduct] = await fetchPhone()
+  if (!data) return <div>Loading...</div>
   return (
     <div>
       <Image

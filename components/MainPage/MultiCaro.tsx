@@ -7,7 +7,7 @@ import ProductCard from "./ProductCard"
 
 function MultiCaro({ data }: [CompleteProduct]) {
   return (
-    <div className="carousel-end carousel  rounded-box">
+    <div className="rounded-box flex flex-wrap justify-evenly">
       {data.map((item: CompleteProduct, indx: number) => (
         <ProductCard
           src={item.src}

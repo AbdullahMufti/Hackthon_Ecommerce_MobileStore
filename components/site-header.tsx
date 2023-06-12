@@ -1,31 +1,40 @@
 "use client"
 
-import { useState } from "react"
+import { useEffect, useState } from "react"
+import Image from "next/image"
 import Link from "next/link"
+import { useCartContext } from "@/context/CartContext"
 
 import { siteConfig } from "@/config/site"
-import { GetItemTotalCount } from "@/lib/cartManage"
-import { Badge } from "@/components/ui/badge"
 import { buttonVariants } from "@/components/ui/button"
 import { Icons } from "@/components/icons"
-import { MainNav } from "@/components/main-nav"
 import { ThemeToggle } from "@/components/theme-toggle"
 
+import { DropdownMenuD } from "./ui/DropdownMenuD"
+import { InputWithButton } from "./ui/SearchBar"
+
 export function SiteHeader() {
-  const [data, setData] = useState(GetItemTotalCount())
+  const { Qty, GetItemTotalCount } = useCartContext()
 
-  function myFunction() {
-    setData(GetItemTotalCount())
-  }
+  const [qty, setQty] = useState(GetItemTotalCount())
 
-  setInterval(myFunction, 1000)
+  useEffect(() => {
+    return () => {
+      setQty(GetItemTotalCount())
+    }
+  }, [qty])
+
   return (
     <header className="sticky top-0 z-40 w-full border-b bg-background">
       <div className="container flex h-16 items-center space-x-4 sm:justify-between sm:space-x-0">
-        <MainNav items={siteConfig.mainNav} />
+        <div className="flex flex wrap">
+          <Link href="/" className="flex items-center space-x-2">
+            <Image  alt="logo" quality={100} src="/logo.png" height={6} width={6} className="h-6 w-6" />
 
-        <div className="flex flex-1 items-center justify-end space-x-4">
-          <nav className="flex items-center space-x-1">
+            <span className="inline-block font-bold pt-2">{siteConfig.name}</span>
+          </Link>
+          <DropdownMenuD />
+                      <InputWithButton />
             <Link href="/cart">
               <div
                 className={buttonVariants({
@@ -34,11 +43,11 @@ export function SiteHeader() {
                 })}
               >
                 <Icons.ShoppingCart className="h-5 w-5" />
-                <div className="badge badge-primary badge-lg">{data}</div>
+                <div className="badge badge-primary badge-lg">{Qty}</div>
               </div>
             </Link>
             <ThemeToggle />
-          </nav>
+
         </div>
       </div>
     </header>

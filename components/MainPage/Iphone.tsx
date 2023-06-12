@@ -8,13 +8,14 @@ import MultiCaro from "./MultiCaro"
 
 const fetchPhone = async () => {
   const res = await client.fetch(
-    `*[_type=="product" && company=="Apple"][0..10]`
+    `*[_type=="product" && company=="Apple"][0..4]`
   )
   return res
 }
 
-export default async function Iphone() {
+export default async function Iphone(): Promise<React.JSX.Element> {
   const data: [CompleteProduct] = await fetchPhone()
+  if (!data) return <div>Loading...</div>
   return (
     <div>
       <div className="flex items-center justify-center">

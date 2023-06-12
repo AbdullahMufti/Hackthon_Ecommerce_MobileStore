@@ -21,11 +21,6 @@ export function MainNav({ items }: MainNavProps) {
         <span className="inline-block font-bold">{siteConfig.name}</span>
       </Link>
       <DropdownMenuD />
-      {items?.length ? (
-        <nav className="flex gap-6">
-          <InputWithButton />
-        </nav>
-      ) : null}
     </div>
   )
 }

@@ -9,6 +9,7 @@ import { CardDemo } from "@/app/CardDemo"
 export default async function IndexPage() {
   return (
     <section className="container  items-center gap-6 pb-8 pt-6 md:py-10">
+      {/* @ts-expect-error Server Component */}
       <MainPage />
     </section>
   )
