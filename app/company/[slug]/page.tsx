@@ -42,6 +42,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
               usd={item.price_usd}
               pkr={item.price_pkr}
               item={item}
+              kv={undefined}
             />
           ))}
         </div>
