@@ -18,6 +18,7 @@ interface Pricecard {
   usd: number
   pkr: number
   item: CompleteProduct
+  kv: string[] | null | undefined
 }
 interface Mapobj {
   vval: string
@@ -30,6 +31,7 @@ export default function ProductCard({
   usd,
   pkr,
   item,
+  kv,
 }: Pricecard) {
   const { AddToCart } = useCartContext()
 
@@ -48,15 +50,48 @@ export default function ProductCard({
       </div>
       <div className="mt-4 px-5 pb-5">
         <div>
+          {!!kv && kv[0] === "sim" && (
+            <div className="bg-yellow-300 text-center text-lg tracking-tight dark:bg-green-900">
+              SIM : {item.sim}
+            </div>
+          )}
+          {!!kv && kv[0] === "size" && (
+            <div className="bg-yellow-300 text-center text-lg tracking-tight dark:bg-green-900">
+              SIZE : {item.size}
+            </div>
+          )}
+          {!!kv && kv[0] === "battery" && (
+            <div className="bg-yellow-300 text-center text-lg tracking-tight dark:bg-green-900">
+              Battery {item.battery}
+            </div>
+          )}
+          {!!kv && kv[0] === "os" && (
+            <div className="bg-yellow-300 text-center text-lg tracking-tight dark:bg-green-900">
+              OS {item.os}
+            </div>
+          )}
           <h5 className="text-center text-lg tracking-tight ">
             {company.trim()} {name}
           </h5>
-          <h5 className="text-center text-lg tracking-tight ">
-            Storage : {item.storage}
-          </h5>
-          <h5 className="text-center text-lg tracking-tight ">
-            Memory : {item.memory}
-          </h5>
+
+          {!!kv && kv[0] === "storage" ? (
+            <div className="bg-yellow-300 text-center text-lg tracking-tight dark:bg-green-900">
+              Storage : {item.storage}
+            </div>
+          ) : (
+            <h5 className="text-center text-lg tracking-tight ">
+              Storage : {item.storage}
+            </h5>
+          )}
+          {!!kv && kv[0] === "memory" ? (
+            <div className="bg-yellow-300 text-center text-lg tracking-tight dark:bg-green-900">
+              Memory : {item.memory}
+            </div>
+          ) : (
+            <h5 className="text-center text-lg tracking-tight ">
+              Memory : {item.memory}
+            </h5>
+          )}
           <div className="flex items-center justify-center">
             <Icons.star />
             <Icons.star />

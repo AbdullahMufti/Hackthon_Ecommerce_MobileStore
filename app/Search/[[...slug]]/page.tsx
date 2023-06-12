@@ -43,8 +43,8 @@ const page = async ({ params }: { params: { slug: string[] } }) => {
       query = `*[_type=="product" && size>5 && size<=6 ] | order(price_usd asc)`
     } else if (kv[1] == "7") {
       query = `*[_type=="product" && size>6 && size<=7 ] | order(price_usd asc)`
-    } else if (kv[1] == "7+") {
-      query = `*[_type=="product" && size > 7  ]|  order(price_usd asc)`
+    } else if (kv[1] == "8") {
+      query = `*[_type=="product" && size>7  ]|  order(price_usd asc)`
     }
   } else if (kv[0] == "battery") {
     if (kv[1] == "1500") {
@@ -57,7 +57,7 @@ const page = async ({ params }: { params: { slug: string[] } }) => {
       query = `*[_type=="product" && battery>3500 && battery<=4500 ] | order(price_usd asc)`
     } else if (kv[1] == "5500") {
       query = `*[_type=="product" && battery>4500 && battery<=5500 ] | order(price_usd asc)`
-    } else if (kv[1] == "5500+") {
+    } else if (kv[1] == "6500") {
       query = `*[_type=="product" && battery>5500  ] |  order(price_usd asc)`
     }
   } else if (kv[0] === "Search") {
@@ -112,7 +112,9 @@ const page = async ({ params }: { params: { slug: string[] } }) => {
   const data: [CompleteProduct] = await fetchPhone()
   return (
     <>
-      <h1 className="text-center text-4xl">Search Reaults</h1>
+      {kv[0] === "Search" && (
+        <h1 className="text-center text-4xl">{`Search Reaults for "${kv[1]}"`}</h1>
+      )}
       <div className="container flex w-full">
         <div className="md:5/6 w-full">
           {data && (
@@ -126,6 +128,7 @@ const page = async ({ params }: { params: { slug: string[] } }) => {
                   usd={item.price_usd}
                   pkr={item.price_pkr}
                   item={item}
+                  kv={kv}
                 />
               ))}
             </div>

@@ -18,9 +18,7 @@ interface CartData {
   quantity: number
 }
 export default function CartPage(): React.JSX.Element {
-  const { prevData,        Subtotal,
-        Total,
- } = useCartContext()
+  const { prevData, Total } = useCartContext()
 
   const router = useRouter()
 
@@ -28,8 +26,7 @@ export default function CartPage(): React.JSX.Element {
     .NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY as string
   const stripePromise = loadStripe(publishableKey)
 
-  const [shipping, setShipping] = useState(4.99)
-
+  const [shipping, setShipping] = useState(10)
 
   const createCheckOutSession = async () => {
     if (prevData) {
@@ -42,9 +39,11 @@ export default function CartPage(): React.JSX.Element {
         quantity: 1,
         price: Total * 100,
       }
-      const allName = prevData.map((item) => item.company + " - " + item.name)
+      const allName = prevData.map(
+        (item: CartData) => item.company + " - " + item.name
+      )
       item.name = allName.join(",")
-      const allcompanies = prevData.map((item) => item.company)
+      const allcompanies = prevData.map((item: CartData) => item.company)
       item.company = allcompanies.join(",")
 
       const checkoutSession = await fetch("/api/create-stripe-session", {
@@ -78,7 +77,7 @@ export default function CartPage(): React.JSX.Element {
         <div className="mx-auto max-w-5xl justify-center px-6 md:flex md:space-x-6 xl:px-0">
           <div className="rounded-lg md:w-2/3">
             {prevData && prevData.length > 0 ? (
-              prevData.map((EProduct, indx) => (
+              prevData.map((EProduct: CartData, indx: number) => (
                 <EachProduct
                   id={EProduct.id}
                   src={EProduct.src}
@@ -100,8 +99,6 @@ export default function CartPage(): React.JSX.Element {
           </div>
           {prevData && (
             <TotalArea
-              Subtotal={Subtotal}
-              Total={Total}
               shipping={shipping}
               createCheckOutSession={createCheckOutSession}
             />

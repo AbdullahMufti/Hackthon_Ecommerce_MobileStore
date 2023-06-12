@@ -47,7 +47,6 @@ export default function RootLayout({ children }: RootLayoutProps) {
           <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
             <div className="relative flex min-h-screen flex-col">
               <CartContext>
-                <NewNavBar />
                 <AnotherNavbar />
                 <div className="flex-1 mt-20">{children}</div>
               </CartContext>

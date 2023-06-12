@@ -1,18 +1,23 @@
 "use client"
 
-import React from "react"
+import React, { useEffect } from "react"
+import { useCartContext } from "@/context/CartContext"
 
 export default function TotalArea({
-  Subtotal,
-  Total,
   shipping,
   createCheckOutSession,
 }: {
-  Subtotal: number
-  Total: number
   shipping: number
   createCheckOutSession: () => void
 }) {
+  const { Subtotal, Total, CalculateTotals } = useCartContext()
+
+  useEffect(() => {
+    return () => {
+      CalculateTotals()
+    }
+  }, [])
+
   return (
     <div className="mt-6 h-full rounded-lg border  p-6 shadow-md md:mt-0 md:w-1/3">
       <div className="mb-2 flex justify-between">

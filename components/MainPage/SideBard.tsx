@@ -3,8 +3,11 @@ import Link from "next/link"
 
 export default function SideBard() {
   return (
-    <div className="hidden lg:flex lg:w-1/6  lg:flex-col">
-      <h1 className="w-full border text-center text-xl"> By Brands</h1>
+    <div className="hidden border px-2 lg:flex  lg:w-1/6 lg:flex-col">
+      <h1 className="w-full border bg-black text-center text-xl text-white dark:bg-white dark:text-black ">
+        {" "}
+        By Brands
+      </h1>
       <Link className="btn-ghost btn-sm btn" href="/company/Apple">
         Apple iphone
       </Link>
@@ -30,7 +33,9 @@ export default function SideBard() {
         Vivo
       </Link>
 
-      <h1 className="border text-xl w-full text-center">By No of Sims</h1>
+      <h1 className="w-full border bg-black text-center text-xl text-white dark:bg-white dark:text-black ">
+        By No of Sims
+      </h1>
       <Link className="btn-ghost btn" href="/Search/sim/SingleSim">
         Single Sim
       </Link>
@@ -38,7 +43,9 @@ export default function SideBard() {
         Dual Sim
       </Link>
 
-      <h1 className="border text-xl w-full text-center">By Price</h1>
+      <h1 className="w-full border bg-black text-center text-xl text-white dark:bg-white dark:text-black ">
+        By Price
+      </h1>
       <Link className="btn-ghost btn" href="/Search/price/30k">
         Below 30,000
       </Link>
@@ -58,7 +65,9 @@ export default function SideBard() {
         Above 300,000{" "}
       </Link>
 
-      <h1 className="border text-xl w-full text-center">By RAM</h1>
+      <h1 className="w-full border bg-black text-center text-xl text-white dark:bg-white dark:text-black ">
+        By RAM
+      </h1>
       <Link className="btn-ghost btn" href="/Search/memory/2GB">
         2GB RAM
       </Link>
@@ -78,7 +87,10 @@ export default function SideBard() {
         12GB RAM
       </Link>
 
-      <h1 className="border text-xl w-full text-center"> By Storage</h1>
+      <h1 className="w-full border bg-black text-center text-xl text-white dark:bg-white dark:text-black ">
+        {" "}
+        By Storage
+      </h1>
       <Link className="btn-ghost btn" href="/Search/storage/16GB">
         16GB storage
       </Link>
@@ -98,7 +110,9 @@ export default function SideBard() {
         512GB storage
       </Link>
 
-      <h1 className="border text-xl w-full text-center">By Screen size</h1>
+      <h1 className="w-full border bg-black text-center text-xl text-white dark:bg-white dark:text-black ">
+        By Screen size
+      </h1>
       <Link className="btn-ghost btn" href="/Search/size/3">
         Less Then 3 Inches
       </Link>
@@ -114,31 +128,35 @@ export default function SideBard() {
       <Link className="btn-ghost btn" href="/Search/size/7">
         6.0 inch - 7.0 inch
       </Link>
-      <Link className="btn-ghost btn" href="/Search/size/7+">
+      <Link className="btn-ghost btn" href="/Search/size/8">
         Above 7.0 inch
       </Link>
 
-      <h1 className="border text-xl w-full text-center">By Battery Capacity</h1>
-      <Link className="btn-ghost btn" href="/Search/size/3">
+      <h1 className="w-full border bg-black text-center text-xl text-white dark:bg-white dark:text-black ">
+        By Battery Capacity
+      </h1>
+      <Link className="btn-ghost btn" href="/Search/battery/1500">
         Less Then 1500mAh
       </Link>
-      <Link className="btn-ghost btn" href="/Search/size/4">
+      <Link className="btn-ghost btn" href="/Search/battery/2500">
         1500mAh - 2500mAh
       </Link>
-      <Link className="btn-ghost btn" href="/Search/size/5">
+      <Link className="btn-ghost btn" href="/Search/battery/3500">
         3500mAh - 3500mAh
       </Link>
-      <Link className="btn-ghost btn" href="/Search/size/6">
+      <Link className="btn-ghost btn" href="/Search/battery/4500">
         3500mAh - 4500mAh
       </Link>
-      <Link className="btn-ghost btn" href="/Search/size/7">
+      <Link className="btn-ghost btn" href="/Search/battery/5500">
         4500mAh - 5500mAh
       </Link>
-      <Link className="btn-ghost btn" href="/Search/size/7+">
+      <Link className="btn-ghost btn" href="/Search/battery/6500">
         Above 5500mAh
       </Link>
 
-      <h1 className="border text-xl w-full text-center">By OS</h1>
+      <h1 className="w-full border bg-black text-center text-xl text-white dark:bg-white dark:text-black ">
+        By OS
+      </h1>
       <Link className="btn-ghost btn" href="/Search/os/Android">
         Android Phones
       </Link>

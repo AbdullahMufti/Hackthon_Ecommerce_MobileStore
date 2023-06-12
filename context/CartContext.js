@@ -34,10 +34,17 @@ export const CartContext = ({ children }) => {
     return () => {
       const pData = localStorage.getItem("cart")
       if (!!pData && pData !== undefined) {
-        console.log(pData)
+        // console.log(pData)
         const pDataa = JSON.parse(pData)
         setPrevData(pDataa)
         setQty(pDataa.length)
+        let Total = 0
+        if (pDataa) {
+          pDataa.map((EP) => (Total = Total + EP.price * EP.quantity))
+        }
+        setSubtotal(Total)
+        setTotal(Number(Total) + 4.99)
+
         CalculateTotals()
       }
     }
@@ -199,7 +206,7 @@ export const CartContext = ({ children }) => {
       prevData.map((EP) => (Total = Total + EP.price * EP.quantity))
     }
     setSubtotal(Total)
-    setTotal(Number(Total) + 4.99)
+    setTotal(Number(Total) + 10.0)
   }
 
   return (
@@ -217,6 +224,7 @@ export const CartContext = ({ children }) => {
         ClearCart,
         GetItemTotalCount,
         GetQty,
+        CalculateTotals,
       }}
     >
       {children}

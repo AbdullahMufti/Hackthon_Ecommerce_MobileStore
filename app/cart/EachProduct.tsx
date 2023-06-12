@@ -52,8 +52,8 @@ export default function EachProduct({
           </h2>
           <p className="mt-1 text-xs ">Unit Price : ${price}</p>
         </div>
-        <div className="mt-4  flex items-end  justify-between sm:mt-0 sm:block sm:space-x-6 sm:space-y-6">
-          <div className="flex items-center justify-end border-gray-100">
+        <div className="mt-4  flex flex-col flex-wrap items-end justify-center sm:mt-0 sm:block sm:flex-row sm:justify-between sm:space-x-6 sm:space-y-6">
+          <div className="flex  items-center justify-end border-gray-100">
             <Button
               variant="outline"
               className="  rounded-l-full  px-3 py-1 duration-100"
