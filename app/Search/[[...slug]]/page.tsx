@@ -48,7 +48,7 @@ const page = async ({ params }: { params: { slug: string[] } }) => {
     }
   } else if (kv[0] == "battery") {
     if (kv[1] == "1500") {
-      query = `*[_type=="product" && battery<=1500 | order(price_usd asc)`
+      query = `*[_type=="product" && battery<=1500] | order(price_usd asc)`
     } else if (kv[1] == "2500") {
       query = `*[_type=="product" && battery>1500 && battery<=2500 ] | order(price_usd asc)`
     } else if (kv[1] == "3500") {

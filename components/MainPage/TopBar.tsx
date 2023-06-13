@@ -12,42 +12,12 @@ import { ScrollArea } from "../ui/scroll-area"
 
 export default function TopBar() {
   return (
-    <div className="flex flex-col border px-2  lg:hidden">
+    <div className="flex flex-col border px-2 mx-10 mt-5 lg:hidden">
       <Accordion type="single" collapsible className="w-full">
         <AccordionItem value="item-1">
           <AccordionTrigger>Search</AccordionTrigger>
           <AccordionContent>
             <ScrollArea className="h-52 w-full rounded-md border">
-              <div className="flex flex-col">
-                <h1 className="w-full border bg-black text-center text-xl text-white dark:bg-white dark:text-black ">
-                  {" "}
-                  By Brands
-                </h1>
-                <Link className="btn-ghost btn-sm btn" href="/company/Apple">
-                  Apple iphone
-                </Link>
-                <Link className="btn-ghost btn" href="/company/Samsung">
-                  Samsung Mobile
-                </Link>
-                <Link className="btn-ghost btn" href="/company/Xiaomi">
-                  Xiaomi Mobile
-                </Link>
-                <Link className="btn-ghost btn" href="/company/Nokia">
-                  Nokia
-                </Link>
-                <Link className="btn-ghost btn" href="/company/OPPO">
-                  OPPO Mobile
-                </Link>
-                <Link className="btn-ghost btn" href="/company/Infinix">
-                  Infinix Mobile
-                </Link>
-                <Link className="btn-ghost btn" href="/company/Huawei">
-                  Huawei Mobile
-                </Link>
-                <Link className="btn-ghost btn" href="/company/Vivo">
-                  Vivo
-                </Link>
-              </div>
               <div className="flex flex-col">
                 <h1 className="w-full border bg-black text-center text-xl text-white dark:bg-white dark:text-black ">
                   By No of Sims
@@ -184,6 +154,36 @@ export default function TopBar() {
                 </Link>
                 <Link className="btn-ghost btn" href="/Search/os/IOS">
                   Apple Phones
+                </Link>
+              </div>
+              <div className="flex flex-col">
+                <h1 className="w-full border bg-black text-center text-xl text-white dark:bg-white dark:text-black ">
+                  {" "}
+                  By Brands
+                </h1>
+                <Link className="btn-ghost btn-sm btn" href="/company/Apple">
+                  Apple iphone
+                </Link>
+                <Link className="btn-ghost btn" href="/company/Samsung">
+                  Samsung Mobile
+                </Link>
+                <Link className="btn-ghost btn" href="/company/Xiaomi">
+                  Xiaomi Mobile
+                </Link>
+                <Link className="btn-ghost btn" href="/company/Nokia">
+                  Nokia
+                </Link>
+                <Link className="btn-ghost btn" href="/company/OPPO">
+                  OPPO Mobile
+                </Link>
+                <Link className="btn-ghost btn" href="/company/Infinix">
+                  Infinix Mobile
+                </Link>
+                <Link className="btn-ghost btn" href="/company/Huawei">
+                  Huawei Mobile
+                </Link>
+                <Link className="btn-ghost btn" href="/company/Vivo">
+                  Vivo
                 </Link>
               </div>
             </ScrollArea>
