@@ -2,7 +2,8 @@ export type SiteConfig = typeof siteConfig
 
 export const siteConfig = {
   name: "Mobile Shop",
-  description: "Welcome to our Mobile .",
+  description:
+    "Welcome to our Mobile Shop. A hackathon project By Abdullah Mufti",
   mainNav: [
     {
       title: "Home",
@@ -10,8 +11,8 @@ export const siteConfig = {
     },
   ],
   links: {
-    twitter: "https://twitter.com/shadcn",
-    github: "https://github.com/shadcn/ui",
-    docs: "https://ui.shadcn.com",
+    twitter: "https://twitter.com",
+    github: "https://github.com",
+    docs: "https://ui.com",
   },
 }
