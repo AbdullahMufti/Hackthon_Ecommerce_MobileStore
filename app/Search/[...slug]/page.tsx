@@ -99,7 +99,7 @@ const page = async ({ params }: { params: { slug: string[] } }) => {
 
   const fetchPhone = async () => {
     if (kv[0] !== "All") {
-      console.log(query)
+      // console.log(query)
       const res = await client.fetch(query)
       return res
     } else {
