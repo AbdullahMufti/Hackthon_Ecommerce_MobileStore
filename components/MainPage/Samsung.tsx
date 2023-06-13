@@ -1,5 +1,6 @@
 import React from "react"
 import Image from "next/image"
+import Link from "next/link"
 
 import { client } from "@/lib/sanityClient"
 import { CompleteProduct } from "@/lib/types"
@@ -18,13 +19,15 @@ export default async function Samsung(): Promise<React.JSX.Element> {
   if (!data) return <div>Loading...</div>
   return (
     <div>
-      <Image
-        src="/samsung.svg"
-        height={180}
-        width={350}
-        alt="Mobile"
-        className=" mx-auto my-3"
-      />
+      <Link href="/company/Samsung">
+        <Image
+          src="/samsung.svg"
+          height={180}
+          width={350}
+          alt="Mobile"
+          className=" mx-auto my-3"
+        />
+      </Link>
       {data && <MultiCaro data={data} />}
     </div>
   )

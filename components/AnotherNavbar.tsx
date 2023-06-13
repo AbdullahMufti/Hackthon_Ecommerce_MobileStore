@@ -32,13 +32,13 @@ export default function AnotherNavbar() {
               className="h-6 w-6"
             />
 
-            <span className="inline-block pt-2 font-bold">
+            <span className="flex items-center justify-center font-bold">
               {siteConfig.name}
             </span>
           </Link>
           <div className="flex md:order-2">
             <Link href="/cart">
-              <div className="relative mt-4 block align-middle  hover:text-gray-700 lg:ml-6 lg:mt-0 lg:inline-block">
+              <div className="relative mt-0  flex items-center justify-center  hover:text-gray-700 lg:ml-6 lg:mt-0">
                 <svg
                   className="h-8 w-8 flex-1"
                   viewBox="0 0 24 24"
