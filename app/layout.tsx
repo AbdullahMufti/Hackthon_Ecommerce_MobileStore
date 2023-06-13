@@ -5,6 +5,7 @@ import { siteConfig } from "@/config/site"
 import { fontSans } from "@/lib/fonts"
 import { cn } from "@/lib/utils"
 import AnotherNavbar from "@/components/AnotherNavbar"
+import TopBar from "@/components/MainPage/TopBar"
 import NewNavBar from "@/components/NewNavBar"
 import { SiteHeader } from "@/components/site-header"
 import { TailwindIndicator } from "@/components/tailwind-indicator"
@@ -48,7 +49,10 @@ export default function RootLayout({ children }: RootLayoutProps) {
             <div className="relative flex min-h-screen flex-col">
               <CartContext>
                 <AnotherNavbar />
-                <div className="flex-1 mt-20">{children}</div>
+                <div className="flex-1 mt-20">
+                  <TopBar />
+                  {children}
+                </div>
               </CartContext>
             </div>
             <TailwindIndicator />
