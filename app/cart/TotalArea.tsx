@@ -3,6 +3,8 @@
 import React, { useEffect } from "react"
 import { useCartContext } from "@/context/CartContext"
 
+import ShippingInfo from "./ShippingInfo"
+
 export default function TotalArea({
   shipping,
   createCheckOutSession,
@@ -19,7 +21,7 @@ export default function TotalArea({
   }, [])
 
   return (
-    <div className="mt-6 h-full rounded-lg border  p-6 shadow-md md:mt-0 md:w-1/3">
+    <div>
       <div className="mb-2 flex justify-between">
         <p className="text-gray-700 dark:text-white">Subtotal</p>
         <p className="text-gray-700 dark:text-white">${Subtotal}.00</p>
@@ -35,6 +37,7 @@ export default function TotalArea({
           <p className="mb-1 text-lg font-bold">${Total}</p>
         </div>
       </div>
+
       <button
         className="btn-primary btn mt-6 w-full rounded-md py-1.5 font-medium "
         disabled={Total === 0}

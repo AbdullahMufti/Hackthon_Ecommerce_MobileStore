@@ -5,8 +5,10 @@ import { useRouter } from "next/navigation"
 import { CartContext, useCartContext } from "@/context/CartContext"
 import { loadStripe } from "@stripe/stripe-js"
 import axios from "axios"
+import { toast } from "react-hot-toast"
 
 import EachProduct from "./EachProduct"
+import ShippingInfo from "./ShippingInfo"
 import TotalArea from "./TotalArea"
 
 interface CartData {
@@ -28,45 +30,60 @@ export default function CartPage(): React.JSX.Element {
 
   const [shipping, setShipping] = useState(10)
 
+  const [Name, setName] = useState("")
+  const [Email, setEmail] = useState("")
+  const [Wapp, setWapp] = useState("")
+  const [Address, setAddress] = useState("")
+
   const createCheckOutSession = async () => {
-    if (prevData) {
-      const stripe = await stripePromise
+    if (Name === "") {
+      toast("Please Fill out the shipping form, name is missing")
+    } else if (Email === "") {
+      toast("Please Fill out the shipping form, email is missing")
+    } else if (Wapp === "") {
+      toast("Please Fill out the shipping form, Whatsapp Number is missing")
+    } else if (Address === "") {
+      toast("Please Fill out the shipping form, Shipping Address is missing")
+    } else {
+      if (prevData) {
+        const stripe = await stripePromise
 
-      let item = {
-        name: "",
-        company: "",
-        image: prevData[0].src,
-        quantity: 1,
-        price: Total * 100,
+        const checkoutSession = await fetch("/api/create-stripe-session", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            ProductData: prevData,
+            UserData: {
+              Name: Name,
+              Email: Email,
+              Wapp: Wapp,
+              Address: Address,
+            },
+          }),
+        })
+
+        const data = await checkoutSession.json()
+
+        console.log(data.session)
+
+        if (data) {
+          if (data.session) {
+            if (data.session.url) {
+              router.push(data.session.url)
+            }
+          }
+        }
+
+        // const result = await stripe?.redirectToCheckout({
+        //   sessionId: session.url,
+        // })
+
+        // if (result?.error) {
+        //   alert(result.error.message)
+        // }
       }
-      const allName = prevData.map(
-        (item: CartData) => item.company + " - " + item.name
-      )
-      item.name = allName.join(",")
-      const allcompanies = prevData.map((item: CartData) => item.company)
-      item.company = allcompanies.join(",")
-
-      const checkoutSession = await fetch("/api/create-stripe-session", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ prevData: prevData }),
-      })
-
-      const session = await checkoutSession.json()
-
-      if (session.url) {
-        router.push(session.url)
-      }
-
-      // const result = await stripe?.redirectToCheckout({
-      //   sessionId: session.url,
-      // })
-
-      // if (result?.error) {
-      //   alert(result.error.message)
-      // }
     }
   }
 
@@ -74,6 +91,7 @@ export default function CartPage(): React.JSX.Element {
     <div>
       <div className="min-h-screen  pt-20">
         <h1 className="mb-10 text-center text-2xl font-bold">Cart Items</h1>
+
         <div className="mx-auto max-w-5xl justify-center px-6 md:flex md:space-x-6 xl:px-0">
           <div className="rounded-lg md:w-2/3">
             {prevData && prevData.length > 0 ? (
@@ -97,12 +115,26 @@ export default function CartPage(): React.JSX.Element {
               </div>
             )}
           </div>
-          {prevData && (
-            <TotalArea
-              shipping={shipping}
-              createCheckOutSession={createCheckOutSession}
+
+          <div className="mt-6 h-full rounded-lg border  p-6 shadow-md md:mt-0 md:w-1/3">
+            <ShippingInfo
+              Name={Name}
+              Email={Email}
+              Wapp={Wapp}
+              Address={Address}
+              setName={setName}
+              setEmail={setEmail}
+              setWapp={setWapp}
+              setAddress={setAddress}
             />
-          )}
+            <br />
+            {prevData && (
+              <TotalArea
+                shipping={shipping}
+                createCheckOutSession={createCheckOutSession}
+              />
+            )}
+          </div>
         </div>
       </div>
     </div>

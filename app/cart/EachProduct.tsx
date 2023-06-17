@@ -24,15 +24,7 @@ export default function EachProduct({
   price,
   quantity,
 }: CartData) {
-  const { AddOneToCart, RemoveOneFromCart, GetQty } = useCartContext()
-
-  const [qty, setQty] = useState(GetQty(id))
-
-  useEffect(() => {
-    return () => {
-      setQty(GetQty(id))
-    }
-  }, [qty])
+  const { AddOneToCart, RemoveOneFromCart } = useCartContext()
 
   return (
     <div className="mb-6 justify-between rounded-lg border p-6 shadow-xl sm:flex sm:justify-start">
@@ -59,7 +51,6 @@ export default function EachProduct({
               className="  rounded-l-full  px-3 py-1 duration-100"
               onClick={() => {
                 RemoveOneFromCart(id)
-                setQty(GetQty(id))
                 toast.error(`Removed 1 ${company} ${name}  from cart`, {
                   position: "bottom-right",
                 })
@@ -67,13 +58,12 @@ export default function EachProduct({
             >
               -
             </Button>
-            <div className="p1 mx-3 h-full">{qty}</div>
+            <div className="p1 mx-3 h-full">{quantity}</div>
             <Button
               variant="outline"
               className="  rounded-r-full  px-3 py-1 duration-100"
               onClick={() => {
                 AddOneToCart(id)
-                setQty(GetQty(id))
                 toast.success(`Added 1 ${company} ${name} to cart`, {
                   position: "bottom-right",
                 })
@@ -85,9 +75,9 @@ export default function EachProduct({
           <div className="flex items-center space-x-4">
             <p className="text-sm">
               {" "}
-              {name} * {qty} =
+              {name} * {quantity} =
               <span className="text-lg font-bold">
-                $&nbsp; {Number(qty) * Number(price)}{" "}
+                $&nbsp; {Number(quantity) * Number(price)}{" "}
               </span>
             </p>
           </div>

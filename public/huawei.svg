@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
-
 <svg
    xmlns:dc="http://purl.org/dc/elements/1.1/"
    xmlns:cc="http://creativecommons.org/ns#"
@@ -461,10 +460,12 @@
     </clipPath>
     <style
        type="text/css"
-       id="style1895"><![CDATA[
+       id="style1895">
+      <![CDATA[
     .fil0 {fill:black}
     .fil1 {fill:black;fill-rule:nonzero}
-   ]]></style>
+   ]]>
+    </style>
     <clipPath
        clipPathUnits="userSpaceOnUse"
        id="clipPath3703">
@@ -21968,7 +21969,8 @@
 </style>
   <style
      type="text/css"
-     id="style10424"><![CDATA[
+     id="style10424">
+    <![CDATA[
 	.st0{clip-path:url(#SVGID_108_);fill:#242728;}
 	.st1{clip-path:url(#SVGID_455_);fill:#242728;}
 	.st2{clip-path:url(#SVGID_351_);fill:#25282A;}
@@ -21981,10 +21983,10 @@
 	.st9{clip-path:url(#SVGID_381_);fill:none;stroke:#242728;stroke-width:6;stroke-miterlimit:10;}
 	.st10{clip-path:url(#SVGID_459_);fill:none;stroke:#242728;stroke-width:4;stroke-miterlimit:10;}
 	.st11{mask:url(#mask-4_2_);fill:#ADADAD;}
-	.st12{clip-path:url(#SVGID_413_);enable-background:new    ;}
+	.st12{clip-path:url(#SVGID_413_);enableBackground:new    ;}
 	.st13{clip-path:url(#SVGID_423_);fill:#242728;}
-	.st14{clip-path:url(#SVGID_329_);enable-background:new    ;}
-	.st15{clip-path:url(#SVGID_223_);enable-background:new    ;}
+	.st14{clip-path:url(#SVGID_329_);enableBackground:new    ;}
+	.st15{clip-path:url(#SVGID_223_);enableBackground:new    ;}
 	.st16{clip-path:url(#SVGID_549_);fill:#262626;}
 	.st17{clip-path:url(#SVGID_401_);fill:none;stroke:#242728;stroke-width:6;stroke-miterlimit:10;}
 	.st18{clip-path:url(#SVGID_431_);fill:none;stroke:#242728;stroke-width:6;stroke-miterlimit:10;}
@@ -22005,19 +22007,19 @@
 	.st33{clip-path:url(#SVGID_293_);fill:#242728;}
 	.st34{clip-path:url(#SVGID_529_);fill:#242728;}
 	.st35{clip-path:url(#SVGID_557_);fill:#6F6F6F;}
-	.st36{clip-path:url(#SVGID_14_);enable-background:new    ;}
+	.st36{clip-path:url(#SVGID_14_);enableBackground:new    ;}
 	.st37{fill:none;stroke:#232627;stroke-width:1.5;stroke-miterlimit:10;}
 	.st38{clip-path:url(#SVGID_447_);fill:#242728;}
 	.st39{clip-path:url(#SVGID_128_);fill:#6F6F6F;}
 	.st40{fill-rule:evenodd;clip-rule:evenodd;fill:#ADADAD;}
 	.st41{fill:none;stroke:#6F6F6F;stroke-miterlimit:10;}
 	.st42{fill-rule:evenodd;clip-rule:evenodd;fill:#7F7F7F;}
-	.st43{enable-background:new    ;}
+	.st43{enableBackground:new    ;}
 	.st44{clip-path:url(#SVGID_40_);fill:#2F2F2F;}
 	.st45{clip-path:url(#SVGID_343_);fill:#25282A;}
 	.st46{mask:url(#mask-2_3_);fill:#ADADAD;}
 	.st47{clip-path:url(#SVGID_261_);fill:#242728;}
-	.st48{clip-path:url(#SVGID_213_);enable-background:new    ;}
+	.st48{clip-path:url(#SVGID_213_);enableBackground:new    ;}
 	.st49{fill:none;stroke:#FFFFFF;stroke-miterlimit:10;}
 	.st50{clip-path:url(#SVGID_475_);fill:none;stroke:#242728;stroke-width:4;stroke-miterlimit:10;}
 	.st51{fill:none;stroke:#E0E0E0;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
@@ -22057,7 +22059,7 @@
 	.st85{clip-path:url(#SVGID_32_);fill:#2F2F2F;}
 	.st86{clip-path:url(#SVGID_335_);fill:#25282A;}
 	.st87{clip-path:url(#SVGID_513_);fill:none;stroke:#242728;stroke-width:4;stroke-miterlimit:10;}
-	.st88{clip-path:url(#SVGID_102_);enable-background:new    ;}
+	.st88{clip-path:url(#SVGID_102_);enableBackground:new    ;}
 	.st89{clip-path:url(#SVGID_253_);fill:#25282A;}
 	.st90{clip-path:url(#SVGID_112_);fill:#242728;}
 	.st91{opacity:0.6;fill:#ADADAD;}
@@ -22087,9 +22089,9 @@
 	.st115{fill:#CF0A2C;}
 	.st116{fill:none;stroke:#242728;stroke-width:3;stroke-linecap:square;stroke-miterlimit:10;}
 	.st117{clip-path:url(#SVGID_164_);fill:#6F6F6F;}
-	.st118{clip-path:url(#SVGID_495_);enable-background:new    ;}
+	.st118{clip-path:url(#SVGID_495_);enableBackground:new    ;}
 	.st119{fill:none;stroke:#6F6F6F;stroke-width:0.5;stroke-miterlimit:10;}
-	.st120{clip-path:url(#SVGID_243_);enable-background:new    ;}
+	.st120{clip-path:url(#SVGID_243_);enableBackground:new    ;}
 	.st121{mask:url(#mask-2_2_);fill:#ADADAD;}
 	.st122{clip-path:url(#SVGID_533_);fill:#242728;}
 	.st123{clip-path:url(#SVGID_377_);fill:none;stroke:#242728;stroke-width:6;stroke-miterlimit:10;}
@@ -22258,7 +22260,7 @@
 	.st286{clip-path:url(#SVGID_92_);}
 	.st287{clip-path:url(#SVGID_96_);}
 	.st288{clip-path:url(#SVGID_219_);fill:#7F7F7F;}
-	.st289{clip-path:url(#SVGID_233_);enable-background:new    ;}
+	.st289{clip-path:url(#SVGID_233_);enableBackground:new    ;}
 	.st290{clip-path:url(#SVGID_24_);fill:#6F6F6F;}
 	.st291{opacity:0.9;fill:none;stroke:#242728;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
 	.st292{clip-path:url(#SVGID_371_);fill:#25282A;}
@@ -22269,7 +22271,7 @@
 	.st297{clip-path:url(#SVGID_525_);fill:#242728;}
 	.st298{clip-path:url(#SVGID_443_);fill:#242728;}
 	.st299{clip-path:url(#SVGID_192_);fill:#242728;}
-	.st300{clip-path:url(#SVGID_4_);enable-background:new    ;}
+	.st300{clip-path:url(#SVGID_4_);enableBackground:new    ;}
 	.st301{mask:url(#SVGID_193_);}
 	.st302{clip-path:url(#SVGID_209_);fill:#7F7F7F;}
 	.st303{clip-path:url(#SVGID_124_);fill:#6F6F6F;}
@@ -22297,5 +22299,6 @@
 	.st325{clip-path:url(#SVGID_537_);fill:#242728;}
 	.st326{clip-path:url(#SVGID_249_);fill:#242728;}
 	.st327{clip-path:url(#SVGID_463_);fill:none;stroke:#242728;stroke-width:6;stroke-miterlimit:10;}
-]]></style>
+]]>
+  </style>
 </svg>
